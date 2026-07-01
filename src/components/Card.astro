@@ -1,0 +1,71 @@
+---
+const {
+  name = "PRATEEK SINGH",
+  position = "AI/ML Engineer | AI Agents | RAG Systems | Vision AI",
+  location = "New Delhi, India",
+  availability = "Remote Ready",
+  email = "prathamgsingh@gmail.com",
+  aboutMe = "AI/ML Engineer building AI agents, RAG systems, vision AI workflows, and backend AI products. Experienced with Python, FastAPI, Flask, PostgreSQL, Supabase, OpenCV, PyTorch, ONNX, and prompt engineering. Focused on reliable, safe, and production-ready AI solutions.",
+  linkedin = "https://www.linkedin.com/in/prateeksingh05/",
+  github = "https://github.com/Prateeksingh84",
+  cvLink = "/files/PRATEEK_SINGH_AI_ENGINEER_RESUME_.pdf",
+  profileImage = "/images/profile.webp.png",
+} = Astro.props;
+
+const skills = [
+  "AI Agents",
+  "RAG Systems",
+  "Vision AI",
+  "FastAPI",
+  "PyTorch",
+  "PostgreSQL",
+];
+import "../styles/card.css";
+---
+
+<section class="page-wrapper">
+  <article class="profile-card">
+    <div class="card-content">
+      <p class="eyebrow">AI/ML Engineer Portfolio</p>
+
+      <h1>{name}</h1>
+
+      <h2>{position}</h2>
+
+      <p class="contact-line">
+        {location} <span>•</span> {availability} <span>•</span> {email}
+      </p>
+
+      <p class="about-text">{aboutMe}</p>
+
+      <div class="skill-chips">
+        {skills.map((skill) => (
+          <span>{skill}</span>
+        ))}
+      </div>
+
+      <div class="icons">
+        <a href={linkedin} class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href={github} class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href={cvLink} class="icon-link primary-btn" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+          <i class="bi bi-file-earmark-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card-image">
+      <div class="image-ring">
+        <img src={profileImage} alt={`${name} profile image`} />
+      </div>
+    </div>
+  </article>
+</section>
